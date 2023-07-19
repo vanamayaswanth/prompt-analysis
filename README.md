@@ -1,7 +1,7 @@
 # Prompt-Analysis -Tool 
 
 
-## Introduction Prompt Analysis Tool is a web application that utilizes OpenAI's GPT-3.5 Turbo model to analyze chat prompts and provide a score based on specific parameters. This tool allows users to enter a chat prompt and receive a score on a scale of 1 to 100, indicating how well the prompt satisfies certain criteria set by the system. Additionally, the tool generates a new prompt that meets all the specified parameters.
+Introduction  to Prompt Analysis Tool is a web application that utilizes OpenAI's GPT-3.5 Turbo model to analyze chat prompts and provide a score based on specific parameters. This tool allows users to enter a chat prompt and receive a score on a scale of 1 to 100, indicating how well the prompt satisfies certain criteria set by the system. Additionally, the tool generates a new prompt that meets all the specified parameters.
 
 ## Objective
 
