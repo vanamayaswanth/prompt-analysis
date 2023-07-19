@@ -1,8 +1,5 @@
 # Prompt-Analysis
 
-Sure! Here's a detailed README for the project:
-
-# Chat Prompt Analysis Tool
 
 ## Introduction
 
