@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Result</h1>
+        <div class="result-container">
+            <p>Score: {{ score }}</p>
+            <div class="new-prompt-container">
+                <p>New Prompt:</p>
+                <div class="new-prompt">
+                    {{ new_prompt }}
+                </div>
+                <button onclick="copyNewPrompt()">Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyNewPrompt() {
+            var newPromptText = document.querySelector(".new-prompt").innerText;
+            var tempTextArea = document.createElement("textarea");
+            tempTextArea.value = newPromptText;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextArea);
+            alert("New Prompt copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
+

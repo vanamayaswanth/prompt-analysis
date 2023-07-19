@@ -1,0 +1,44 @@
+ 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prompt Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1> Prompt-Analysis</h1>
+        <form method="post" action="/">
+            <div class="input-container">
+                <label for="openai_key">OpenAI API Key:</label>
+                <div class="input-box">
+                    <input type="password" name="openai_key" id="openai_key" required>
+                    <span class="password-toggle" onclick="togglePasswordVisibility()">&#x1F441;</span>
+                </div>
+            </div>
+            <div class="input-container">
+                <label for="prompt">Prompt:</label>
+                <textarea name="prompt" id="prompt" required></textarea>
+            </div>
+            <div class="submit-container">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+        <div class="credits">
+            Created by vanama yaswanth & sethu sai
+        </div>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var openaiKeyInput = document.getElementById("openai_key");
+            if (openaiKeyInput.type === "password") {
+                openaiKeyInput.type = "text";
+            } else {
+                openaiKeyInput.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
