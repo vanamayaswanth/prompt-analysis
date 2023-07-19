@@ -1,13 +1,11 @@
-# Prompt-Analysis
+# Prompt-Analysis -Tool 
 
 
-## Introduction
-
-Chat Prompt Analysis Tool is a web application that utilizes OpenAI's GPT-3.5 Turbo model to analyze chat prompts and provide a score based on specific parameters. This tool allows users to enter a chat prompt and receive a score on a scale of 1 to 100, indicating how well the prompt satisfies certain criteria set by the system. Additionally, the tool generates a new prompt that meets all the specified parameters.
+## Introduction Prompt Analysis Tool is a web application that utilizes OpenAI's GPT-3.5 Turbo model to analyze chat prompts and provide a score based on specific parameters. This tool allows users to enter a chat prompt and receive a score on a scale of 1 to 100, indicating how well the prompt satisfies certain criteria set by the system. Additionally, the tool generates a new prompt that meets all the specified parameters.
 
 ## Objective
 
-The main objective of this project is to provide a user-friendly web-based tool for analyzing chat prompts using OpenAI's powerful GPT-3.5 Turbo language model. The tool helps users ensure that their prompts are clear, specific, and effectively communicate the desired context and instructions. By scoring and generating new prompts, users can improve the effectiveness of their interactions with the language model.
+The main objective of this project is to provide a user-friendly web-based tool for analyzing chat prompts using OpenAI's powerful GPT-3.5 Turbo language model. The tool helps users ensure that their prompts are clear, and specific, and effectively communicate the desired context and instructions. By scoring and generating new prompts, users can improve the effectiveness of their interactions with the language model.
 
 ## Features
 
@@ -35,7 +33,7 @@ The main objective of this project is to provide a user-friendly web-based tool 
 
 ## Credits
 
-This Chat Prompt Analysis Tool was created by vanamayaswanth and sethusai.
+This Chat Prompt Analysis Tool was created by Vanamayaswanth and sethusai.
 
 ## Contributions
 
