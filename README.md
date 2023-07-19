@@ -49,6 +49,6 @@ This project is licensed under the [MIT License](LICENSE).
 2. Gradio APP
 3. Docker 
 
-Note : Please note that this tool utilizes OpenAI's language model, and users are responsible for ensuring compliance with OpenAI's terms of service and any other relevant regulations. The tool is intended for educational and experimental purposes and should not be used for any malicious or harmful activities.
+Note: Please note that this tool utilizes OpenAI's language model, and users are responsible for ensuring compliance with OpenAI's terms of service and any other relevant regulations. The tool is intended for educational and experimental purposes and should not be used for any malicious or harmful activities.
 
-Enjoy using the Chat Prompt Analysis Tool! If you have any questions or need assistance, feel free to reach out to the project maintainers. Happy prompting!
+Enjoy using the Prompt Analysis Tool! If you have any questions or need assistance, feel free to reach out to the project maintainers. Happy prompting!
