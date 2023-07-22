@@ -22,12 +22,11 @@ The main objective of this project is to provide a user-friendly web-based tool 
 1. Clone the repository: `git clone https://github.com/your_username/chat-prompt-analysis.git`
 2. Install the required dependencies: `pip install Flask openai`
 3. Set up your OpenAI API key: Create an account on the OpenAI website and obtain your API key.
-4. Replace `"YOUR_OPENAI_API_KEY"` in `app.py` with your actual OpenAI API key.
-5. Run the Flask app: `python app.py`
+4. Run the Flask app: `python app.py`
 
 ## How to Use
 
-1. Access the application by visiting `http://127.0.0.1:5000/` in your web browser.
+1. Access the application by visiting `http://127.0.0.1:8080/` in your web browser.
 2. Enter your OpenAI API key in the provided input box. The API key will be hidden behind a password input field for security.
 3. Enter your chat prompt in the designated text area. And See the magic 
 
