@@ -46,7 +46,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 1. Hugging face integration
 2. Gradio APP
-3. Docker
+3. Docker ✔
 4. Advanced prompting Techniques
 
 Note: Please note that this tool utilizes OpenAI's language model, and users are responsible for ensuring compliance with OpenAI's terms of service and any other relevant regulations. The tool is intended for educational and experimental purposes and should not be used for any malicious or harmful activities.
