@@ -5,12 +5,14 @@ from langchain import LLMChain
 from langchain.output_parsers import StructuredOutputParser, ResponseSchema
 import openai
 
-llm = OpenAI(temperature=0.3)
+
+# llm = OpenAI(temperature=temp,model=model,max_token=max_token)
 
 
-def prompt_analysis(query,api_key):
+def prompt_analysis(query,api_key,model,max_token,temp):
     
     openai.api_key=api_key
+    llm = OpenAI(temperature=temp,model=model,max_token=max_token)
 
     prompt = """
     You need to analyze the given prompt {query} and provide a score on the scale of 1 to 100 based on the following parameters:. 
