@@ -1,5 +1,4 @@
 .chainlit
 __pycache__
-ptr/
 *.ipynb
-
+mkk/
