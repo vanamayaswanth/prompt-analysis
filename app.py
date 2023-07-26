@@ -6,12 +6,12 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        openai_key = request.form['openai_key']
+        api_key = request.form['openai_key']
         temp=request.form['temp']
-        model=request.form['model']
+        # model=request.form['model']
         max_token=request.form['max_token']
         prompt = request.form['prompt']
-        score, new_prompt = prompt_analysis(prompt=prompt,openai_key=openai_key,temp=temp,max_token=max_token,model=model)
+        score, new_prompt = prompt_analysis(query=prompt,api_key=api_key,temp=temp,max_token=max_token)
         return render_template('result.html', score=score,new_prompt=new_prompt)
 
     return render_template('index.html')

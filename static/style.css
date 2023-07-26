@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 20px;
     padding: 0;
@@ -50,6 +50,117 @@ input[type="submit"] {
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
+    cursor: pointer;
+}
+
+.input-container label,
+.submit-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.result-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+}
+
+.result-container p {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.new-prompt-container {
+    margin-top: 20px;
+}
+
+.new-prompt {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+}
+
+.new-prompt button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+}
+
+.credits {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+} */
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-container {
+    margin-bottom: 10px;
+}
+
+.input-box {
+    position: relative;
+}
+
+input[type="password"],
+input[type="text"],
+textarea,
+input[type="range"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="range"] {
     cursor: pointer;
 }
 
