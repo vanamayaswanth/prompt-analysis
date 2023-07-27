@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OpenAI Prompt Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1> OpenAI Prompt Analysis</h1>
+        <form method="post" action="/openai">
+            <div class="input-container">
+                <label for="api_key">OpenAI API Key:</label>
+                <div class="input-box">
+                    <input type="password" name="api_key" id="api_key" required>
+                    <span class="password-toggle" onclick="togglePasswordVisibility()">&#x1F441;</span>
+                </div>
+            </div>
+            <div class="input-container">
+                <label for="prompt">Prompt:</label>
+                <textarea name="prompt" id="prompt" required></textarea>
+            </div>
+            <div class="input-container">
+                <label for="temp">Temperature:</label>
+                <input type="range" name="temp" id="temp" min="0" max="1" step="0.1" value="0.2">
+                <span id="tempValue">0.2</span>
+            </div>
+            <div class="input-container">
+                <label for="max_token">Max Tokens:</label>
+                <input type="range" name="max_token" id="max_token" min="1000" max="4000" step="1" value="2048">
+                <span id="maxTokenValue">2048</span>
+            </div>
+            <div class="submit-container">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+        <div class="back-container">
+            <a href="/">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var apiKeyInput = document.getElementById("api_key");
+            if (apiKeyInput.type === "password") {
+                apiKeyInput.type = "text";
+            } else {
+                apiKeyInput.type = "password";
+            }
+        }
+
+        var tempSlider = document.getElementById("temp");
+        var tempValueDisplay = document.getElementById("tempValue");
+        tempValueDisplay.innerHTML = tempSlider.value;
+
+        tempSlider.oninput = function() {
+            tempValueDisplay.innerHTML = this.value;
+        };
+
+        var maxTokenSlider = document.getElementById("max_token");
+        var maxTokenValueDisplay = document.getElementById("maxTokenValue");
+        maxTokenValueDisplay.innerHTML = maxTokenSlider.value;
+
+        maxTokenSlider.oninput = function() {
+            maxTokenValueDisplay.innerHTML = this.value;
+        };
+    </script>
+</body>
+</html>

@@ -3,10 +3,9 @@ from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
 from langchain import LLMChain
 from langchain.output_parsers import StructuredOutputParser, ResponseSchema
-from entity.prompt_entity import Prompt
 
 
-def prompt_analysis(query, api_key, temp, max_token):
+def prompt_analysis(query, api_key, temp, max_token):  #prompt_enity?
     llm = OpenAI(
         temperature=temp,
         max_tokens=max_token,
@@ -33,8 +32,8 @@ def prompt_analysis(query, api_key, temp, max_token):
         partial_variables={"format_instructions": format_instructions}
     )
 
-    prompt_entity = Prompt(query)
-    _input = example_prompt.format_prompt(query=prompt_entity.query)
+    
+    _input = example_prompt.format_prompt(query=query)
     output = llm(_input.to_string())
 
     x = output_parser.parse(output)
@@ -43,6 +42,3 @@ def prompt_analysis(query, api_key, temp, max_token):
     new_prompt = x["new_prompt"]
 
     return score, new_prompt
-
-    # result_entity = Result(score, new_prompt)
-    # return result_entity
