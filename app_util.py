@@ -43,3 +43,6 @@ def prompt_analysis(query, api_key, temp, max_token):
     new_prompt = x["new_prompt"]
 
     return score, new_prompt
+
+    # result_entity = Result(score, new_prompt)
+    # return result_entity
