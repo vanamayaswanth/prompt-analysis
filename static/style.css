@@ -1,3 +1,4 @@
+
 /* Common CSS for all pages */
 body {
     font-family: Arial, sans-serif;
@@ -21,13 +22,11 @@ h1 {
     color: #333;
 }
 
-.input-container {
+.form-group {
     margin-bottom: 20px;
 }
 
-input[type="password"],
-input[type="text"],
-textarea {
+.form-control {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -36,20 +35,19 @@ textarea {
     color: #333;
 }
 
-.input-container label,
-.submit-container label {
+.form-group label,
+.text-center label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: #333;
 }
 
-.submit-container {
+.text-center {
     text-align: center;
-    margin-top: 20px;
 }
 
-.submit-container input[type="submit"] {
+.btn {
     background-color: black;
     color: white;
     border: none;
@@ -60,78 +58,16 @@ textarea {
     transition: background-color 0.3s ease;
 }
 
-.submit-container input[type="submit"]:hover {
+.btn:hover {
     background-color: #222;
 }
 
-.result-container {
-    margin-top: 30px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.result-container p {
-    margin: 5px 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-.new-prompt-container {
+.mt-4 {
     margin-top: 30px;
 }
 
-.new-prompt {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    margin-bottom: 10px;
-}
-
-.new-prompt button {
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.new-prompt button:hover {
-    background-color: #222;
-}
-
-.credits {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 14px;
-    color: #888;
-}
-
-.back-container {
-    text-align: center;
+.mt-2 {
     margin-top: 20px;
-}
-
-.back-container button {
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.back-container button:hover {
-    background-color: #222;
 }
 
 /* Additional CSS for index.html */
@@ -162,28 +98,86 @@ textarea {
     font-weight: bold;
 }
 
+/* Additional CSS for openai.html and huggingface.html */
+.password-toggle {
+    cursor: pointer;
+}
+
+.range-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.range-container span {
+    font-weight: bold;
+}
+
 /* Additional CSS for result.html */
-.score-box {
-    position: relative;
+.result-container {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #007bff; /* Blue color for progress bar */
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.new-prompt-container {
+    margin-top: 30px;
+}
+
+.new-prompt {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     background-color: #f9f9f9;
+    margin-bottom: 10px;
 }
 
-.score-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
+.copy-button {
+    background-color: black;
+    color: white;
+    border: none;
     border-radius: 5px;
-    /* Set inline styles using Flask's template rendering */
-    
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.score-text {
-    margin: 5px 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+.copy-button:hover {
+    background-color: #222;
+}
+
+.credits {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+}
+
+.back-container {
+    text-align: center;
+    margin-top: 20px;
 }
