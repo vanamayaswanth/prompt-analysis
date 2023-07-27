@@ -161,3 +161,29 @@ textarea {
     background-color: #f2f2f2;
     font-weight: bold;
 }
+
+/* Additional CSS for result.html */
+.score-box {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.score-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 5px;
+    /* Set inline styles using Flask's template rendering */
+    
+}
+
+.score-text {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
