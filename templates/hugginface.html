@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prompt Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1> Prompt-Analysis</h1>
+        <div class="option-container">
+            <div class="option-box" onclick="selectOption('openai')">
+                <h3>OpenAI</h3>
+                <p>Select OpenAI for analysis.</p>
+            </div>
+            <div class="option-box" onclick="selectOption('huggingface')">
+                <h3>Hugging Face</h3>
+                <p>Select Hugging Face for analysis.</p>
+            </div>
+        </div>
+        <form id="huggingface-form" method="post" action="/huggingface">
+            <!-- Hugging Face-specific form fields (excluding OpenAI API Key) go here -->
+            <div class="input-container">
+                <label for="prompt">Prompt:</label>
+                <textarea name="prompt" id="prompt" required></textarea>
+            </div>
+            <div class="input-container">
+                <label for="temp">Temperature:</label>
+                <input type="range" name="temp" id="temp" min="0" max="1" step="0.1" value="0.2">
+                <span id="tempValue">0.2</span>
+            </div>
+            <div class="input-container">
+                <label for="max_token">Max Tokens:</label>
+                <input type="range" name="max_token" id="max_token" min="10" max="4000" step="1" value="2048">
+                <span id="maxTokenValue">2048</span>
+            </div>
+            <div class="submit-container">
+                <input type="submit" value="Submit" onclick="showPleaseWait()">
+            </div>
+        </form>
+        <div class="credits">
+            Created by vanama yaswanth & sethu sai
+        </div>
+    </div>
+
+    <script>
+        // Same script as in index.html
+    </script>
+</body>
+</html>
