@@ -1,4 +1,3 @@
-
 /* Common CSS for all pages */
 body {
     font-family: Arial, sans-serif;
@@ -132,7 +131,8 @@ h1 {
 }
 
 .progress-bar {
-    background-color: #007bff; /* Blue color for progress bar */
+    background-color: #007bff;
+    /* Blue color for progress bar */
     height: 100%;
     transition: width 0.3s ease;
 }
