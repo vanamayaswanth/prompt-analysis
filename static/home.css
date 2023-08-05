@@ -16,6 +16,7 @@ body {
 }
 
 .clipped-element::before {
+    content: "";
     position: absolute;
     z-index: -1;
     top: 0;
@@ -23,8 +24,9 @@ body {
     right: 0;
     bottom: 0;
     clip-path: polygon(0 0, 79% 0, 17% 100%, 0% 100%);
-    background-color: #24d3c7d8;
+    background-color: #24d3c78e;
 }
+
 
 .container {
     z-index: 1;
@@ -74,7 +76,7 @@ img {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    height: 150px;
+    height: 130px;
     width: 30%;
     margin: 50px;
     margin-top: 20px;
@@ -87,7 +89,6 @@ p {
 
 .option-box:hover {
     z-index: 1;
-    color: #24d3c7d8;
     border: 1px solid #24d3c7d8;
     background-color: #3333331f;
 }
@@ -98,15 +99,17 @@ p {
     font-weight: bold;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1000px) {
     .option-box {
         margin: 20px;
         padding: 10px;
-        height: 270px;
+        height: auto;
+        width: auto;
     }
 
     p {
 
-        font-size: 17px;
+        font-size: 16px;
     }
 }
+
