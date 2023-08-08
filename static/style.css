@@ -1,20 +1,79 @@
+html,
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+img {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    animation: slideRight 2s forwards, slideUpAndDisappear 1s forwards 1.5s;
+}
+
+@keyframes slideRight {
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes slideUpAndDisappear {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: -100%;
+        opacity: 0;
+    }
+}
 
 /* Common CSS for all pages */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f2f2f2;
+    overflow-y: hidden;
+}
+
+.clipped-element {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    z-index: 0;
+
+}
+
+.clipped-element::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(0 0, 79% 0, 17% 100%, 0% 100%);
+    background-color: #24d3c78e;
 }
 
 .container {
+    z-index: 1;
+    position: absolute;
+    height: 70vh;
     max-width: 600px;
-    margin: 30vh auto;
-    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 
 h1 {
     margin-bottom: 20px;
@@ -67,117 +126,5 @@ h1 {
 }
 
 .mt-2 {
-    margin-top: 20px;
-}
-
-/* Additional CSS for index.html */
-.option-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-}
-
-.option-box {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 30%;
-    margin: 10px;
-}
-
-.option-box:hover {
-    background-color: #f2f2f2;
-}
-
-.active-option {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-/* Additional CSS for openai.html and huggingface.html */
-.password-toggle {
-    cursor: pointer;
-}
-
-.range-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.range-container span {
-    font-weight: bold;
-}
-
-/* Additional CSS for result.html */
-.result-container {
-    margin-top: 30px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.progress-container {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    height: 30px;
-    margin-bottom: 10px;
-    overflow: hidden;
-}
-
-.progress-bar {
-    background-color: #007bff; /* Blue color for progress bar */
-    height: 100%;
-    transition: width 0.3s ease;
-}
-
-.progress-text {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-.new-prompt-container {
-    margin-top: 30px;
-}
-
-.new-prompt {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    margin-bottom: 10px;
-}
-
-.copy-button {
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.copy-button:hover {
-    background-color: #222;
-}
-
-.credits {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 14px;
-    color: #888;
-}
-
-.back-container {
-    text-align: center;
     margin-top: 20px;
 }
