@@ -8,10 +8,14 @@
 </head>
 
 <body>
-    <div class="transition-container">
-        <img src="{{url_for('static', filename='openai.png')}}">
-    </div>
     <div class="clipped-element">
+        <div class="slideshow-container">
+            <img src="{{url_for('static', filename='image1.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image2.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image3.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image4.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image5.jpeg')}}" class="slideshow-image">
+        </div>
         <div class="container">
             <h1 class="text-center mt-4">OpenAI Prompt Analysis</h1>
             <form method="post" action="/openai" class="mt-4">
@@ -74,17 +78,20 @@
             maxTokenValueDisplay.innerHTML = this.value;
         };
 
-        function hideContainer() {
-            var containerElement = document.querySelector(".container");
-            containerElement.style.display = "none";
-        }
-        function showContainer() {
-            var containerElement = document.querySelector(".container");
-            containerElement.style.display = "block";
-        }
-        setTimeout(showContainer, 900);
+        document.addEventListener("DOMContentLoaded", function () {
+            const slideshowImages = document.querySelectorAll(".slideshow-image");
+            let currentImageIndex = 0;
 
-        hideContainer();
+            function showNextImage() {
+                slideshowImages[currentImageIndex].classList.remove("active");
+                currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+                slideshowImages[currentImageIndex].classList.add("active");
+            }
+            setTimeout(function () {
+                showNextImage();
+                setInterval(showNextImage, 3000);
+            });
+        });
     </script>
 </body>
 
