@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <title>About Us</title>
+</head>
+
+<body>
+    <div class="slideshow-container">
+        <div class="slideshow-container">
+            <img src="{{url_for('static', filename='image1.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image2.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image3.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image4.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image5.jpeg')}}" class="slideshow-image">
+        </div>
+    </div>
+    <div class="logo">
+        <a href="https://github.com/vanamayaswanth/prompt-analysis" target="_blank" title="GitHub"><img
+            src="{{url_for('static', filename='gitHubLogoWhite.png')}}"></a>
+        <a href="/connection" title="Connection"><img
+            src="{{url_for('static', filename='connection.png')}}"></a>
+    </div>
+    <div class="container">
+        <div>
+            <h1>Welcome to Prompt Analysis Tool</h1>
+            <p>
+                The Prompt Analysis Tool is a web application that uses OpenAI's GPT-3.5 Turbo model to analyze chat
+                prompts and provide scores based on specific criteria.
+            </p>
+
+            <h2>Objective</h2>
+            <p>
+                The main goal of this project is to offer a user-friendly web tool for analyzing chat prompts using
+                OpenAI's GPT-3.5 Turbo model. It helps ensure clear and effective communication with the language model.
+            </p>
+
+            <h2>Features</h2>
+            <ul>
+                <li>Input OpenAI API Key: Securely provide your API key to access the language model's capabilities.
+                </li>
+                <li>Analyze Chat Prompt: Input a chat prompt to analyze system and user instructions, cues, and context
+                    information.</li>
+                <li>Prompt Scoring: Assigns a score (1-100) based on clarity, specificity, and context.</li>
+                <li>Generate New Prompt: Creates a new prompt that meets required parameters.</li>
+            </ul>
+
+            <h2>Getting Started</h2>
+            <ol>
+                <li>Clone the repository:
+                    <code>git clone https://github.com/your_username/chat-prompt-analysis.git</code>
+                </li>
+                <li>Install dependencies: <code>pip install Flask openai</code></li>
+                <li>Set up OpenAI API key: Get your key from OpenAI website.</li>
+                <li>Run Flask app: <code>python app.py</code></li>
+            </ol>
+            <h2 id="password-protected-input">How to Get an OpenAI API Key</h2>
+            <ol>
+                <li><strong>Create an OpenAI Account:</strong> If you haven't already, go to the OpenAI website and
+                    create an account.</li>
+                <li><strong>Log in to your Account:</strong> Use the credentials you created during the registration
+                    process to log in to your OpenAI account.</li>
+                <li><strong>Navigate to Personal:</strong> Once logged in, find the section view <a
+                        href="https://platform.openai.com/account/api-keys" target="_blank">API Keys</a> .</li>
+                <li><strong>Generate an API Key:</strong> There should be an option to generate an API key. This key
+                    will serve as your authentication token to access OpenAI's services.</li>
+                <li><strong>Follow the Key Generation Process:</strong> The exact steps might vary, but generally,
+                    you'll need to click on a "Generate API Key" or similar button. The system might prompt you to
+                    provide a name for the key or associate it with a specific project.</li>
+                <li><strong>Retrieve the API Key:</strong> Once generated, your API key will likely be displayed on the
+                    screen. It might be a long string of characters. This key is sensitive and should be kept secure.
+                    Copy that Key.</li>
+            </ol>
+
+            <h2>How to Use</h2>
+            <ol>
+                <li>Access the app at <a href="http://127.0.0.1:8080/" target="_blank">http://127.0.0.1:8080/</a>.</li>
+                <li>Enter OpenAI API key in <a href="#password-protected-input"> password-protected input</a>.</li>
+                <li>Input chat prompt and see the analysis.</li>
+            </ol>
+
+            <h2>Credits</h2>
+            <p>Tool created by Vanamayaswanth, sethusai and Moksh.</p>
+
+            <h2>Contributions</h2>
+            <p>Contributions are welcome via issues or pull requests.</p>
+
+            <h2>License</h2>
+            <p>Project is under <a href="LICENSE">MIT License</a>.</p>
+
+            <h2>Future Updates</h2>
+            <ul>
+                <li>Hugging face integration</li>
+                <li>Gradio APP</li>
+                <li>Docker</li>
+                <li>Advanced prompting Techniques</li>
+            </ul>
+
+            <p>
+                Note: The tool uses OpenAI's model; users must follow terms of service and relevant regulations. For
+                educational purposes only.
+            </p>
+
+            <p>Enjoy using the Prompt Analysis Tool!</p>
+
+
+        </div>
+    </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slideshowImages = document.querySelectorAll(".slideshow-image");
+            let currentImageIndex = 0;
+
+            function showNextImage() {
+                slideshowImages[currentImageIndex].classList.remove("active");
+                currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+                slideshowImages[currentImageIndex].classList.add("active");
+            }
+            setTimeout(function () {
+                showNextImage();
+                setInterval(showNextImage, 3000);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

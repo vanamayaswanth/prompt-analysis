@@ -4,11 +4,21 @@
 <head>
     <title>Prompt Analysis</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+
 </head>
 
 <body>
     <div class="clipped-element">
+
+        <div class="slideshow-container">
+            <img src="{{url_for('static', filename='image1.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image2.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image3.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image4.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image5.jpeg')}}" class="slideshow-image">
+        </div>
         <div class="container">
+
             <h1> Prompt Analysis</h1>
             <img src="{{url_for('static', filename='boys.gif')}}">
             <div class="option-container">
@@ -20,9 +30,31 @@
                     <h2>Hugging Face</h2>
                     <p>Unlock the power of Hugging Face for analysis - Click here!</p>
                 </div>
+                <div class="option-box" onclick="location.href='/about'">
+                    <h2>About Us</h2>
+                    <p>Unlock innovation through intuitive AI and seamless connections - Click here!</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slideshowImages = document.querySelectorAll(".slideshow-image");
+            let currentImageIndex = 0;
+
+            function showNextImage() {
+                slideshowImages[currentImageIndex].classList.remove("active");
+                currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+                slideshowImages[currentImageIndex].classList.add("active");
+            }
+            setTimeout(function () {
+                showNextImage();
+                setInterval(showNextImage, 3000);
+            });
+        });
+
+    </script>
 </body>
 
 </html>

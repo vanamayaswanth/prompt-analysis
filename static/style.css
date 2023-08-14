@@ -2,83 +2,60 @@ html,
 body {
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
 }
 
-img {
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    animation: slideRight 2s forwards, slideUpAndDisappear 1s forwards 1.5s;
-}
-
-@keyframes slideRight {
-    100% {
-        left: 0;
-    }
-}
-
-@keyframes slideUpAndDisappear {
-    0% {
-        top: 0;
-        opacity: 1;
-    }
-
-    100% {
-        top: -100%;
-        opacity: 0;
-    }
-}
-
-/* Common CSS for all pages */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
     overflow-y: hidden;
 }
 
-.clipped-element {
-    height: 100vh;
-    width: 100vw;
+.slideshow-container {
     position: relative;
-    z-index: 0;
-
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.clipped-element::before {
-    content: "";
+.slideshow-image {
     position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    clip-path: polygon(0 0, 79% 0, 17% 100%, 0% 100%);
-    background-color: #24d3c78e;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow-image.active {
+    opacity: 1;
 }
 
 .container {
     z-index: 1;
     position: absolute;
-    height: 70vh;
+    height: 76vh;
     max-width: 600px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
     border-radius: 10px;
-    background-color: white;
+    background-color: #000000e3;
+    color: #f2f2f2;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 
 h1 {
+    z-index: 1;
     margin-bottom: 20px;
     text-align: center;
-    color: #333;
+    color: #f2f2f2;
+    padding: 20px;
+    border-bottom: 1px solid;
+}
+
+h2 {
+    color: #f2f2f2;
 }
 
 .form-group {
@@ -91,7 +68,7 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    color: #333;
+    color: #f2f2f2;
 }
 
 .form-group label,
@@ -99,11 +76,23 @@ h1 {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #333;
+    color: #f2f2f2;
+}
+
+span {
+    color: #f2f2f2;
 }
 
 .text-center {
     text-align: center;
+}
+
+.input-group>input {
+    color: #000;
+}
+
+.form-group>textarea {
+    color: #000;
 }
 
 .btn {

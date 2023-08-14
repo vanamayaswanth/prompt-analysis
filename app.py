@@ -11,6 +11,8 @@ def index():
             return redirect(url_for('openai'))
         elif option == 'huggingface':
             return redirect(url_for('huggingface'))
+        elif option == 'about':
+            return redirect(url_for('about'))
     return render_template('index.html')
 
 @app.route('/openai', methods=['GET', 'POST'])
@@ -32,6 +34,18 @@ def huggingface():
         prompt = request.form['prompt']
         return redirect(url_for('result', option='huggingface', hugging_key=hugging_key, temp=temp, max_token=max_token, prompt=prompt))
     return render_template('huggingface.html')
+
+@app.route('/about', methods=['GET','POST'])
+def about():
+    if request.method == 'POST':
+        option = request.form['option']
+        if option == 'connection':
+            return redirect(url_for('connection'))
+    return render_template('about.html')
+
+@app.route('/connection')
+def connection():
+    return render_template('connection.html')
 
 @app.route('/result', methods=['GET'])
 def result():
