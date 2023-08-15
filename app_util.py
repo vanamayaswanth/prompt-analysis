@@ -1,26 +1,27 @@
-
-from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
-from langchain import LLMChain
-from langchain.output_parsers import StructuredOutputParser, ResponseSchema
+from langchain.output_parsers import ResponseSchema, StructuredOutputParser
+from langchain.prompts import PromptTemplate
 
 
-def prompt_analysis(query, api_key, temp, max_token):  #prompt_enity?
-    llm = OpenAI(
-        temperature=temp,
-        max_tokens=max_token,
-        openai_api_key=api_key
-    )
+def prompt_analysis(query, api_key, temp, max_token):  # prompt_enity?
+    llm = OpenAI(temperature=temp, max_tokens=max_token, openai_api_key=api_key)
     prompt_template = """
-    You need to analyze the given prompt {query} and provide a score on the scale of 1 to 100 based on the following parameters:. 
-    The given prompt should be clear and specific, using complete sentences. The prompt might have  provide context.. 
-    The prompt might have  system and user instructions .\n4. The prompt might  have explicit cues.. The prompt should be  broken down for  complex tasks 
-    or limit the scope.Now, generate a new_prompt that satisfies all the parameters,{format_instructions}
+    Analyze the provided prompt {query} and assign a score from 1 to 100 using the following guidelines:
+        - Ensure the given prompt is clear, specific, and presented in complete sentences.
+        - Include relevant context within the prompt; insufficient context may result in a lower score.
+        - Accommodate any system or user instructions that may be present in the prompt.
+        - Take into consideration explicit cues that might be included.
+        - If the task is complex, break down the prompt or set limitations to streamline the scope.
+        Based on these criteria, craft a new_prompt that adheres to all the specified requirements, {format_instructions}
     """
 
     response_schemas = [
-        ResponseSchema(name="score", description="this is the score for the given prompt"),
-        ResponseSchema(name="new_prompt", description="this is the new prompt for the given prompt")
+        ResponseSchema(
+            name="score", description="this is the score for the given prompt"
+        ),
+        ResponseSchema(
+            name="new_prompt", description="this is the new prompt for the given prompt"
+        ),
     ]
     output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
 
@@ -29,10 +30,9 @@ def prompt_analysis(query, api_key, temp, max_token):  #prompt_enity?
     example_prompt = PromptTemplate(
         input_variables=["query"],
         template=prompt_template,
-        partial_variables={"format_instructions": format_instructions}
+        partial_variables={"format_instructions": format_instructions},
     )
 
-    
     _input = example_prompt.format_prompt(query=query)
     output = llm(_input.to_string())
 
