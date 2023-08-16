@@ -24,7 +24,8 @@
                 <div class="progress-container">
                     <div class="progress-bar" style="width: {{ score }}%"></div>
                 </div>
-                <p class="progress-text text-center">{{ score }}%</p>
+                <p class="progress-text text-center">{{ score }}% Score</p>
+                <div class="feedback-emoji text-center">{{ feedbackEmoji }}</div>
                 <div class="new-prompt-container">
                     <p class="new-prompt-title">New Prompt:</p>
                     <div class="new-prompt">
@@ -61,6 +62,8 @@
                 setInterval(showNextImage, 3000);
             });
         });
+
+        
     </script>
 </body>
 

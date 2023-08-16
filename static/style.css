@@ -162,3 +162,20 @@ span {
 .button:active {
     opacity: .5;
 }
+
+@media screen and (max-width: 1000px) {
+    .container {
+        height: 35vh;
+    }
+    .option-box {
+        margin: 20px;
+        padding: 10px;
+        height: auto;
+        width: auto;
+    }
+
+    p {
+
+        font-size: 16px;
+    }
+}
