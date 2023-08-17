@@ -36,10 +36,10 @@ body {
     left: 92%;
     transform: translate(-50%, -50%);
     padding: 10px;
-   
+
 }
 
-.logo>a{
+.logo>a {
     padding: 20px;
 }
 
@@ -58,7 +58,7 @@ body {
     transform: translate(-50%, -50%);
     padding: 10px;
     border-radius: 10px;
-    background-color: #000000e5;
+    background-color: #000000b4;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
 }
@@ -73,7 +73,11 @@ h1 {
 }
 
 h2 {
-    color: #f2f2f2;
+    font-size: 30px;
+    padding-bottom: 8px;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    color: #f2f2f2c9;
 }
 
 .option-container {
@@ -99,30 +103,94 @@ h2 {
     margin-top: 20px;
 }
 
-p{
+p {
     margin: 10px;
     padding: 20px;
     font-size: 20px;
     color: #f2f2f2;
 }
 
-ol{
+ol {
     color: #f2f2f2;
     padding: 20px;
-    font-size: 20px;  
+    font-size: 20px;
 }
 
-ol>li{
+ol>li {
     margin: 14px;
 }
 
-ul{
+ul {
     color: #f2f2f2;
     padding: 20px;
-    font-size: 20px;  
+    font-size: 20px;
 }
 
-ul>li{
+ul>li {
     margin: 14px;
 }
 
+.button {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    margin-left: 45%;
+}
+
+.button:hover,
+.button-24:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.button:active {
+    opacity: .5;
+}
+
+@media screen and (max-width: 1000px) {
+    .logo {
+        z-index: 1;
+        position: absolute;
+        display: flex;
+        top: 4%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+    
+    }
+    
+    .option-box {
+        margin: 20px;
+        padding: 10px;
+        height: auto;
+        width: auto;
+    }
+    .button{
+        margin-left: 30%;
+    }
+
+    p {
+
+        font-size: 16px;
+    }
+}

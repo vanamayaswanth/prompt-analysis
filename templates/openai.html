@@ -10,11 +10,14 @@
 <body>
     <div class="clipped-element">
         <div class="slideshow-container">
-            <img src="{{url_for('static', filename='image1.jpeg')}}" class="slideshow-image">
-            <img src="{{url_for('static', filename='image2.jpeg')}}" class="slideshow-image">
-            <img src="{{url_for('static', filename='image3.jpeg')}}" class="slideshow-image">
-            <img src="{{url_for('static', filename='image4.jpeg')}}" class="slideshow-image">
-            <img src="{{url_for('static', filename='image5.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image1.png')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image2.png')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image3.jpg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image4.jpg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image5.jpg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image6.jpg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image7.jpg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image8.jpg')}}" class="slideshow-image">
         </div>
         <div class="container">
             <h1 class="text-center mt-4">OpenAI Prompt Analysis</h1>
@@ -47,9 +50,9 @@
                     <input type="submit" value="Submit" class="btn btn-dark">
                 </div>
             </form>
-            <div class="back-container mt-4 text-center">
-                <a class="btn btn-secondary" href="/">Back to Home</a>
-            </div>
+            <a href="/">
+                <button class="button" role="button">Back to Home</button>
+            </a>
         </div>
     </div>
     <script>

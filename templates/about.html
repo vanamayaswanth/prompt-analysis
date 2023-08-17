@@ -11,18 +11,20 @@
 <body>
     <div class="slideshow-container">
         <div class="slideshow-container">
-            <img src="{{url_for('static', filename='image1.jpeg')}}" class="slideshow-image">
-            <img src="{{url_for('static', filename='image2.jpeg')}}" class="slideshow-image">
-            <img src="{{url_for('static', filename='image3.jpeg')}}" class="slideshow-image">
-            <img src="{{url_for('static', filename='image4.jpeg')}}" class="slideshow-image">
-            <img src="{{url_for('static', filename='image5.jpeg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image1.png')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image2.png')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image3.jpg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image4.jpg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image5.jpg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image6.jpg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image7.jpg')}}" class="slideshow-image">
+            <img src="{{url_for('static', filename='image8.jpg')}}" class="slideshow-image">
         </div>
     </div>
     <div class="logo">
         <a href="https://github.com/vanamayaswanth/prompt-analysis" target="_blank" title="GitHub"><img
-            src="{{url_for('static', filename='gitHubLogoWhite.png')}}"></a>
-        <a href="/connection" title="Connection"><img
-            src="{{url_for('static', filename='connection.png')}}"></a>
+                src="{{url_for('static', filename='gitHubLogoWhite.png')}}"></a>
+        <a href="/connection" title="Connection"><img src="{{url_for('static', filename='connection.png')}}"></a>
     </div>
     <div class="container">
         <div>
@@ -47,16 +49,6 @@
                 <li>Prompt Scoring: Assigns a score (1-100) based on clarity, specificity, and context.</li>
                 <li>Generate New Prompt: Creates a new prompt that meets required parameters.</li>
             </ul>
-
-            <h2>Getting Started</h2>
-            <ol>
-                <li>Clone the repository:
-                    <code>git clone https://github.com/your_username/chat-prompt-analysis.git</code>
-                </li>
-                <li>Install dependencies: <code>pip install Flask openai</code></li>
-                <li>Set up OpenAI API key: Get your key from OpenAI website.</li>
-                <li>Run Flask app: <code>python app.py</code></li>
-            </ol>
             <h2 id="password-protected-input">How to Get an OpenAI API Key</h2>
             <ol>
                 <li><strong>Create an OpenAI Account:</strong> If you haven't already, go to the OpenAI website and
@@ -91,20 +83,16 @@
             <h2>License</h2>
             <p>Project is under <a href="LICENSE">MIT License</a>.</p>
 
-            <h2>Future Updates</h2>
-            <ul>
-                <li>Hugging face integration</li>
-                <li>Gradio APP</li>
-                <li>Docker</li>
-                <li>Advanced prompting Techniques</li>
-            </ul>
-
             <p>
                 Note: The tool uses OpenAI's model; users must follow terms of service and relevant regulations. For
                 educational purposes only.
             </p>
 
             <p>Enjoy using the Prompt Analysis Tool!</p>
+
+            <a href="/">
+                <button class="button" role="button">Back to Home</button>
+            </a>
 
 
         </div>

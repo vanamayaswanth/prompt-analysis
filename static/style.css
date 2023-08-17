@@ -39,7 +39,7 @@ body {
     transform: translate(-50%, -50%);
     padding: 10px;
     border-radius: 10px;
-    background-color: #000000e3;
+    background-color: #000000b4;
     color: #f2f2f2;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -55,7 +55,11 @@ h1 {
 }
 
 h2 {
-    color: #f2f2f2;
+    font-size: 30px;
+    padding-bottom: 8px;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    color: #f2f2f2c9;
 }
 
 .form-group {
@@ -96,18 +100,22 @@ span {
 }
 
 .btn {
-    background-color: black;
+    background-color: rgba(0, 0, 255, 0.288);
     color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
     transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #222;
+    background-color: initial;
+    background-position: 0 0;
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 255, 0.288);
 }
 
 .mt-4 {
@@ -116,4 +124,58 @@ span {
 
 .mt-2 {
     margin-top: 20px;
+}
+
+.button {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    margin-left: 230px;
+}
+
+.button:hover,
+.button:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.button:active {
+    opacity: .5;
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        height: 35vh;
+    }
+    .option-box {
+        margin: 20px;
+        padding: 10px;
+        height: auto;
+        width: auto;
+    }
+
+    p {
+
+        font-size: 16px;
+    }
 }
