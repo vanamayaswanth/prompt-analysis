@@ -32,7 +32,7 @@ body {
 .container {
     z-index: 1;
     position: absolute;
-    height: 76vh;
+    min-height: 76vh;
     max-width: 600px;
     top: 50%;
     left: 50%;
@@ -100,7 +100,7 @@ span {
 }
 
 .btn {
-    background-color: rgba(0, 0, 255, 0.288);
+    background-color: #FF4742;
     color: white;
     border: none;
     border-radius: 5px;
@@ -115,7 +115,7 @@ span {
     background-color: initial;
     background-position: 0 0;
     background-color: transparent;
-    border: 2px solid rgba(0, 0, 255, 0.288);
+    border: 2px solid #FF4742;
 }
 
 .mt-4 {
@@ -127,46 +127,78 @@ span {
 }
 
 .button {
-    background: #FF4742;
-    border: 1px solid #FF4742;
-    border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    background-color: rgba(0, 0, 255, 0.288);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
     font-size: 16px;
-    font-weight: 800;
-    line-height: 16px;
-    min-height: 40px;
-    outline: 0;
-    padding: 12px 14px;
-    text-align: center;
-    text-rendering: geometricprecision;
-    text-transform: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    margin-left: 230px;
+    cursor: pointer;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    transition: background-color 0.3s ease;
+    margin-left: 38%;
 }
 
 .button:hover,
 .button:active {
     background-color: initial;
     background-position: 0 0;
-    color: #FF4742;
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 255, 0.288);
+
 }
 
 .button:active {
     opacity: .5;
 }
 
+.copy-button {
+    cursor: pointer;
+    outline: 0;
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 16px;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    margin-left: 44%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.copy-button:hover {
+    color: #fff;
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.new-prompt-title{
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+}
+
+.new-prompt{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.promptScore{
+    font-weight: bold;
+    font-size: 35px;
+}
+
 @media screen and (max-width: 1000px) {
     .container {
-        height: 35vh;
+        min-height: 35vh;
     }
+
     .option-box {
         margin: 20px;
         padding: 10px;

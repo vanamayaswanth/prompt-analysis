@@ -29,8 +29,8 @@ body {
 .container {
     z-index: 1;
     position: absolute;
-    height: 70vh;
-    width: 60%;
+    min-height: 70vh;
+    min-width: 60%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -112,9 +112,15 @@ p {
     font-weight: bold;
 }
 
-@media screen and (max-width: 1000px) {
+@media only screen and (max-width: 1600px){
+    p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
     .container {
-        height: 30vh;
+        min-height: 30vh;
     }
     .option-box {
         margin: 20px;
@@ -127,3 +133,4 @@ p {
         font-size: 16px;
     }
 }
+
