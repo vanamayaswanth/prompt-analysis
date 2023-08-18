@@ -6,8 +6,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <div class="clipped-element">
+        <div class="background-container">
+            <img src="{{url_for('static', filename='lock.png')}}" class="background-image">
+            <p>
+                The development of Hugging Face Prompt Analysis is currently in progress. Thank you for your
+                understanding.
+                <a href="/">
+                    <button class="button lockBtn" role="button">Back to Home</button>
+                </a>
+            </p>
+        </div>
         <div class="slideshow-container">
             <img src="{{url_for('static', filename='image1.png')}}" class="slideshow-image">
             <img src="{{url_for('static', filename='image2.png')}}" class="slideshow-image">
