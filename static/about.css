@@ -159,23 +159,17 @@ ul>li {
 
 @media screen and (max-width: 1000px) {
     .logo {
-        z-index: 1;
-        position: absolute;
-        display: flex;
-        top: 4%;
-        left: 80%;
-        transform: translate(-50%, -50%);
-        padding: 10px;
-    
+        left: 73%;
     }
-    
+
     .option-box {
         margin: 20px;
         padding: 10px;
         height: auto;
         width: auto;
     }
-    .button{
+
+    .button {
         margin-left: 30%;
     }
 

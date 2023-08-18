@@ -32,7 +32,7 @@ The main objective of this project is to provide a user-friendly web-based tool 
 
 ## Credits
 
-This Chat Prompt Analysis Tool was created by Vanamayaswanth and sethusai.
+This Chat Prompt Analysis Tool was created by Vanamayaswanth, Sethusai and Moksh.
 
 ## Contributions
 

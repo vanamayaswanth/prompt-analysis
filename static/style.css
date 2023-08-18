@@ -9,6 +9,34 @@ body {
     overflow-y: hidden;
 }
 
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #282828f1;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    display: flex;
+}
+
+.background-image {
+    max-height: 400px;
+    max-width: 400px;
+}
+
+.background-container>p {
+    color: #f2f2f2;
+    font-size: 20px;
+}
+
+.lockBtn {
+    margin-top: 20px;
+}
+
 .slideshow-container {
     position: relative;
     width: 100%;
@@ -178,18 +206,18 @@ span {
     border-color: #0a58ca;
 }
 
-.new-prompt-title{
+.new-prompt-title {
     font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
     font-weight: 400;
     font-size: 35px;
 }
 
-.new-prompt{
+.new-prompt {
     font-size: 20px;
     font-weight: 200;
 }
 
-.promptScore{
+.promptScore {
     font-weight: bold;
     font-size: 35px;
 }
