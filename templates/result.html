@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Analysis Result</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -24,8 +25,10 @@
                 <div class="progress-container">
                     <div class="progress-bar" style="width: {{ score }}%"></div>
                 </div>
-                <p class="progress-text text-center">{{ score }}% Score</p>
-                <div class="feedback-emoji text-center">{{ feedbackEmoji }}</div>
+                <div class="promptScore">
+                    <p class="progress-text text-center">{{ score }}% Score</p>
+                    <div class="feedback-emoji text-center">{{ feedbackEmoji }}</div>
+                </div>
                 <div class="new-prompt-container">
                     <p class="new-prompt-title">New Prompt:</p>
                     <div class="new-prompt">
@@ -34,6 +37,9 @@
                     <button class="copy-button" onclick="copyNewPrompt()">Copy</button>
                 </div>
             </div>
+            <a href="/">
+                <button class="button" role="button">Back to Home</button>
+            </a>
         </div>
     </div>
     <script>
@@ -63,7 +69,22 @@
             });
         });
 
-        
+        var scoreValue = {{ score }};
+        function updateFeedbackEmoji(scoreValue) {
+            const feedbackEmojiElement = document.querySelector(".feedback-emoji");
+            let feedbackEmoji = "🙂";
+            if (scoreValue <= 20) {
+                feedbackEmoji = "😞";
+            } else if (scoreValue <= 50) {
+                feedbackEmoji = "😐";
+            } else if (scoreValue <= 80) {
+                feedbackEmoji = "😊";
+            }
+            feedbackEmojiElement.textContent = feedbackEmoji;
+        }
+
+        updateFeedbackEmoji({{ score }});
+
     </script>
 </body>
 
