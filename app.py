@@ -1,6 +1,6 @@
 from flask import Flask, redirect, render_template, request, url_for
 
-from app_util import prompt_analysis
+from app_util import prompt_analysis,check_moderation
 
 app = Flask(__name__)
 
@@ -80,6 +80,8 @@ def result():
         temp = request.args.get("temp")
         max_token = request.args.get("max_token")
         prompt = request.args.get("prompt")
+
+        check_moderation(api_key=api_key,query=prompt)
         score, new_prompt = prompt_analysis(
             query=prompt, api_key=api_key, temp=temp, max_token=max_token
         )
