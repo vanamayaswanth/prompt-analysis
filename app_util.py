@@ -6,7 +6,7 @@ from langchain.chains import OpenAIModerationChain,SequentialChain,LLMChain
 def prompt_analysis(query, api_key, temp, max_token):  # prompt_enity?
     llm = OpenAI(temperature=temp, max_tokens=max_token, openai_api_key=api_key)
     llm_chain = LLMChain(llm=llm)
-    moderation_chain = OpenAIModerationChain()
+    moderation_chain = OpenAIModerationChain(openai_api_key=api_key,)
     chain = SequentialChain(chains=[llm_chain, moderation_chain])
     
     prompt_template = """
