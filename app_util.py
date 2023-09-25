@@ -1,10 +1,14 @@
 from langchain.llms import OpenAI
 from langchain.output_parsers import ResponseSchema, StructuredOutputParser
 from langchain.prompts import PromptTemplate
-
+from langchain.chains import OpenAIModerationChain,SequentialChain,LLMChain
 
 def prompt_analysis(query, api_key, temp, max_token):  # prompt_enity?
     llm = OpenAI(temperature=temp, max_tokens=max_token, openai_api_key=api_key)
+    llm_chain = LLMChain(llm=llm)
+    moderation_chain = OpenAIModerationChain()
+    chain = SequentialChain(chains=[llm_chain, moderation_chain])
+    
     prompt_template = """
     Analyze the provided prompt {query} and assign a score from 1 to 100 using the following guidelines:
         - Ensure the given prompt is clear, specific, and presented in complete sentences.
@@ -34,7 +38,7 @@ def prompt_analysis(query, api_key, temp, max_token):  # prompt_enity?
     )
 
     _input = example_prompt.format_prompt(query=query)
-    output = llm(_input.to_string())
+    output = chain.run(_input.to_string())
 
     x = output_parser.parse(output)
 
