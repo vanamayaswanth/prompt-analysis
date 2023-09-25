@@ -38,7 +38,7 @@ def prompt_analysis(query, api_key, temp, max_token):  # prompt_enity?
     
     _input = example_prompt.format_prompt(query=query)
     llm = OpenAI(temperature=temp, max_tokens=max_token, openai_api_key=api_key)
-    llm_chain = LLMChain(llm=llm,prompt=prompt_template)
+    llm_chain = LLMChain(llm=llm,prompt=example_prompt)
     moderation_chain = OpenAIModerationChain(openai_api_key=api_key,)
     chain = SequentialChain(chains=[llm_chain, moderation_chain])
 
