@@ -4,7 +4,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import OpenAIModerationChain
 
 def check_moderation(query,api_key):
-    moderation_chain = OpenAIModerationChain(openai_api_key=api_key)
+    moderation_chain = OpenAIModerationChain(openai_api_key=api_key,error=True)
     moderation_chain.run(query)
 
 def prompt_analysis(query, api_key, temp, max_token):  # prompt_enity?
