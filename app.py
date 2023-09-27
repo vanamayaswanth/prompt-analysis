@@ -1,6 +1,7 @@
 from flask import Flask, redirect, render_template, request, url_for
 
-from app_util import prompt_analysis,check_moderation
+from app_util import prompt_analysis
+from app_util import CustomModeration
 
 app = Flask(__name__)
 
@@ -19,37 +20,67 @@ def index():
 
 
 @app.route("/openai", methods=["GET", "POST"])
+
 # def openai():
 #     if request.method == "POST":
 #         api_key = request.form["api_key"]
 #         temp = request.form["temp"]
 #         max_token = request.form["max_token"]
 #         prompt = request.form["prompt"]
-#         return redirect(
-#             url_for(
-#                 "result",
-#                 option="openai",
+        
+#         try:
+#             # Use custom moderation
+#             moderation_result = CustomModeration().run(prompt)  # Run custom moderation
+            
+#             if isinstance(moderation_result, str):
+#                 # If there is an error message, display it on the result page
+#                 return render_template(
+#                     "moderation_result.html",
+#                     moderation_result=moderation_result,
+#                 )
+            
+#             # If no error, perform analysis and show normal result page
+#             score, new_prompt = prompt_analysis(
+#                 query=prompt, api_key=api_key, temp=temp, max_token=max_token
+#             )
+#             return render_template(
+#                 "result.html",
+#                 moderation_result=None,
 #                 api_key=api_key,
 #                 temp=temp,
 #                 max_token=max_token,
 #                 prompt=prompt,
+#                 score=score,
+#                 new_prompt=new_prompt,
 #             )
-#         )
+#         except Exception as e:
+#             # Handle exceptions and display error message on the result page
+#             return render_template(
+#                 "moderation_result.html",
+#                 moderation_result=str(e),  # Pass the exception message as moderation_result
+#             )
 #     return render_template("openai.html")
+
+
+
 
 def openai():
     if request.method == "POST":
-        api_key = request.form["api_key"]
+        # Ensure that the API key and other form inputs are obtained from the form
+        openai_api_key = request.form["api_key"]
         temp = request.form["temp"]
         max_token = request.form["max_token"]
         prompt = request.form["prompt"]
         
         try:
-            # Check moderation and get moderation_result or error
-            moderation_result = check_moderation(query=prompt, api_key=api_key)
+            # Create an instance of CustomModeration with the API key
+            moderation = CustomModeration(openai_api_key)
             
-            # If there is an error message, display it on the result page
-            if isinstance(moderation_result, str):
+            # Use custom moderation
+            moderation_result = moderation.run(prompt)  # Run custom moderation
+            
+            if moderation_result:
+                # If there is an error message, display it on the moderation_result page
                 return render_template(
                     "moderation_result.html",
                     moderation_result=moderation_result,
@@ -57,12 +88,12 @@ def openai():
             
             # If no error, perform analysis and show normal result page
             score, new_prompt = prompt_analysis(
-                query=prompt, api_key=api_key, temp=temp, max_token=max_token
+                query=prompt, api_key=openai_api_key, temp=temp, max_token=max_token
             )
             return render_template(
                 "result.html",
                 moderation_result=None,
-                api_key=api_key,
+                api_key=openai_api_key,
                 temp=temp,
                 max_token=max_token,
                 prompt=prompt,
@@ -70,7 +101,7 @@ def openai():
                 new_prompt=new_prompt,
             )
         except Exception as e:
-            # Handle exceptions and display error message on the result page
+            # Handle exceptions and display error message on the moderation_result page
             return render_template(
                 "moderation_result.html",
                 moderation_result=str(e),  # Pass the exception message as moderation_result
