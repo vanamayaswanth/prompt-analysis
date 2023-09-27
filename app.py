@@ -19,23 +19,65 @@ def index():
 
 
 @app.route("/openai", methods=["GET", "POST"])
+# def openai():
+#     if request.method == "POST":
+#         api_key = request.form["api_key"]
+#         temp = request.form["temp"]
+#         max_token = request.form["max_token"]
+#         prompt = request.form["prompt"]
+#         return redirect(
+#             url_for(
+#                 "result",
+#                 option="openai",
+#                 api_key=api_key,
+#                 temp=temp,
+#                 max_token=max_token,
+#                 prompt=prompt,
+#             )
+#         )
+#     return render_template("openai.html")
+
 def openai():
     if request.method == "POST":
         api_key = request.form["api_key"]
         temp = request.form["temp"]
         max_token = request.form["max_token"]
         prompt = request.form["prompt"]
-        return redirect(
-            url_for(
-                "result",
-                option="openai",
+        
+        try:
+            # Check moderation and get moderation_result or error
+            moderation_result = check_moderation(query=prompt, api_key=api_key)
+            
+            # If there is an error message, display it on the result page
+            if isinstance(moderation_result, str):
+                return render_template(
+                    "moderation_result.html",
+                    moderation_result=moderation_result,
+                )
+            
+            # If no error, perform analysis and show normal result page
+            score, new_prompt = prompt_analysis(
+                query=prompt, api_key=api_key, temp=temp, max_token=max_token
+            )
+            return render_template(
+                "result.html",
+                moderation_result=None,
                 api_key=api_key,
                 temp=temp,
                 max_token=max_token,
                 prompt=prompt,
+                score=score,
+                new_prompt=new_prompt,
             )
-        )
+        except Exception as e:
+            # Handle exceptions and display error message on the result page
+            return render_template(
+                "moderation_result.html",
+                moderation_result=str(e),  # Pass the exception message as moderation_result
+            )
     return render_template("openai.html")
+
+
 
 
 @app.route("/huggingface", methods=["GET", "POST"])
@@ -88,17 +130,17 @@ def result():
         return render_template(
             "result.html", option="OpenAI", score=score, new_prompt=new_prompt
         )
-    elif option == "huggingface":
-        hugging_key = request.args.get("hugging_key")
-        temp = request.args.get("temp")
-        max_token = request.args.get("max_token")
-        prompt = request.args.get("prompt")
-        score, new_prompt = prompt_analysis(
-            query=prompt, hugging_key=hugging_key, temp=temp, max_token=max_token
-        )
-        return render_template(
-            "result.html", option="Hugging Face", score=score, new_prompt=new_prompt
-        )
+    # elif option == "huggingface":
+    #     hugging_key = request.args.get("hugging_key")
+    #     temp = request.args.get("temp")
+    #     max_token = request.args.get("max_token")
+    #     prompt = request.args.get("prompt")
+    #     score, new_prompt = prompt_analysis(
+    #         query=prompt, hugging_key=hugging_key, temp=temp, max_token=max_token
+    #     )
+    #     return render_template(
+    #         "result.html", option="Hugging Face", score=score, new_prompt=new_prompt
+    #     )
 
 
 if __name__ == "__main__":
